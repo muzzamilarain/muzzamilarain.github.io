@@ -27,4 +27,3 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('shadow-lg');
     }
 });
-
