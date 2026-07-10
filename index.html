@@ -130,6 +130,11 @@
 </head>
 <body class="antialiased selection:bg-brand-primary selection:text-white">
 
+    <!-- Diagnostic Banner (Only shows if Tailwind is blocked) -->
+    <div id="tailwind-diagnostic" style="display: none; background-color: #ef4444; color: white; padding: 1rem; text-align: center; font-family: sans-serif; position: relative; z-index: 9999;">
+        <strong>⚠️ WARNING:</strong> Your browser (or a browser extension like NoScript/Privacy Badger) is blocking the Tailwind CSS design engine. Please disable your shields/ad-blocker for this site and refresh.
+    </div>
+
     <!-- Navigation -->
     <nav class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-brand-darker/80 border-b border-brand-surface" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -460,6 +465,13 @@
 
     <!-- JavaScript Logic -->
     <script>
+        // Check if Tailwind loaded properly
+        window.addEventListener('load', () => {
+            if (typeof tailwind === 'undefined') {
+                document.getElementById('tailwind-diagnostic').style.display = 'block';
+            }
+        });
+
         // --- typing.js logic ---
         const words = ["Penetration Tester.", "Researcher.", "Content Creator."];
         let i = 0;
