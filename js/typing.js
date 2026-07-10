@@ -1,4 +1,4 @@
-const words = ["Ethical Hacker.", "Security Researcher.", "Penetration Tester.", "CTF Player."];
+const words = ["Penetration Tester.", "Researcher.", "Content Creator."];
 let i = 0;
 let timer;
 
@@ -40,4 +40,3 @@ function deletingEffect() {
 window.addEventListener('load', () => {
     setTimeout(typingEffect, 1000);
 });
-
