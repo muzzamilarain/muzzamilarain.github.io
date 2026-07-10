@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Cybersecurity Professional</title>
+    
+    <!-- Tailwind CSS (via CDN for GitHub Pages) -->
+    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+    
+    <!-- Google Fonts -->
+    <link href="[https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap)" rel="stylesheet">
+
+    <!-- Tailwind Config for Custom Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        mono: ['"Fira Code"', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',    
+                            darker: '#020617',  
+                            primary: '#10b981', 
+                            glow: '#34d399',    
+                            surface: '#1e293b', 
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Linking your separated CSS files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="antialiased selection:bg-brand-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-brand-darker/80 border-b border-brand-surface" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#home" class="text-brand-primary font-bold text-xl tracking-tighter">
+                        <i class="fa-solid fa-terminal mr-2"></i>root@kali:~#
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-300 hover:text-brand-primary transition-colors text-sm font-medium">~/about</a>
+                    <a href="#projects" class="text-gray-300 hover:text-brand-primary transition-colors text-sm font-medium">~/projects</a>
+                    <a href="#certifications" class="text-gray-300 hover:text-brand-primary transition-colors text-sm font-medium">~/certs</a>
+                    <a href="#articles" class="text-gray-300 hover:text-brand-primary transition-colors text-sm font-medium">~/articles</a>
+                    <a href="#contact" class="text-gray-300 hover:text-brand-primary transition-colors text-sm font-medium">~/contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-brand-primary focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-dark border-b border-brand-surface">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-brand-primary hover:bg-brand-surface">~/about</a>
+                <a href="#projects" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-brand-primary hover:bg-brand-surface">~/projects</a>
+                <a href="#certifications" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-brand-primary hover:bg-brand-surface">~/certs</a>
+                <a href="#articles" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-brand-primary hover:bg-brand-surface">~/articles</a>
+                <a href="#contact" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-brand-primary hover:bg-brand-surface">~/contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-primary/10 rounded-full blur-3xl opacity-50"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl opacity-50"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <p class="text-brand-primary font-medium tracking-widest mb-4">ACCESS GRANTED // WELCOME</p>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 glitch-wrapper" data-text="John Doe">
+                John Doe
+            </h1>
+            <div class="text-xl md:text-3xl text-gray-400 h-10 mb-8">
+                I am a <span id="typed-text" class="text-white"></span><span class="typing-cursor"></span>
+            </div>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Specializing in vulnerability assessment, web application security, and network penetration testing. Securing the digital landscape one system at a time.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#contact" class="px-8 py-3 bg-brand-primary text-brand-darker font-bold rounded hover:bg-brand-glow transition-all shadow-[0_0_15px_rgba(16,185,129,0.4)]">
+                    Initiate Contact
+                </a>
+                <a href="#projects" class="px-8 py-3 border border-brand-surface text-white rounded hover:border-brand-primary hover:text-brand-primary transition-all">
+                    View Arsenal
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-brand-dark">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-in-section">
+                <h2 class="text-3xl font-bold text-white mb-2"><span class="text-brand-primary">01.</span> ~/about-me</h2>
+                <div class="w-20 h-1 bg-brand-primary mb-12"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center fade-in-section">
+                <div>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        Hello! My name is John and I enjoy finding vulnerabilities before the bad guys do. My interest in cybersecurity started back in 2018 when I decided to explore how web applications process user input.
+                    </p>
+                    <p class="text-gray-400 mb-4">Here are a few technologies & tools I've been working with recently:</p>
+                    <ul class="grid grid-cols-2 gap-2 text-sm text-gray-300 font-mono">
+                        <li><i class="fa-solid fa-caret-right text-brand-primary mr-2"></i>Burp Suite Pro</li>
+                        <li><i class="fa-solid fa-caret-right text-brand-primary mr-2"></i>Python / Bash</li>
+                        <li><i class="fa-solid fa-caret-right text-brand-primary mr-2"></i>Metasploit</li>
+                        <li><i class="fa-solid fa-caret-right text-brand-primary mr-2"></i>AWS Security</li>
+                    </ul>
+                </div>
+                
+                <div class="relative rounded-lg overflow-hidden bg-[#0d1117] border border-brand-surface shadow-2xl">
+                    <div class="flex items-center px-4 py-2 bg-[#161b22] border-b border-brand-surface">
+                        <div class="flex space-x-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <div class="mx-auto text-xs text-gray-500 font-mono">kali@kali: ~/about</div>
+                    </div>
+                    <div class="p-6 font-mono text-sm text-gray-300">
+                        <p class="mb-2"><span class="text-brand-primary">kali@kali</span><span class="text-blue-400">~/about</span>$ whoami</p>
+                        <p class="mb-4 text-gray-400">security_researcher</p>
+                        
+                        <p class="mb-2"><span class="text-brand-primary">kali@kali</span><span class="text-blue-400">~/about</span>$ cat skills.txt</p>
+                        <p class="mb-1 text-gray-400">[+] Web Application Penetration Testing</p>
+                        <p class="mb-4 text-gray-400">[+] OSINT & Social Engineering</p>
+
+                        <p class="mb-2"><span class="text-brand-primary">kali@kali</span><span class="text-blue-400">~/about</span>$ ./execute_payload.sh</p>
+                        <p class="text-brand-primary animate-pulse">Initializing reverse shell... Connected.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-brand-darker">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-in-section">
+                <h2 class="text-3xl font-bold text-white mb-2"><span class="text-brand-primary">02.</span> ~/projects</h2>
+                <div class="w-20 h-1 bg-brand-primary mb-12"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="bg-brand-surface rounded-lg p-6 border border-gray-800 hover-glow transition-all fade-in-section flex flex-col h-full group">
+                    <div class="flex justify-between items-center mb-6">
+                        <i class="fa-regular fa-folder-open text-4xl text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-brand-primary transition-colors">Automated Recon Framework</h3>
+                    <p class="text-gray-400 text-sm mb-6 flex-grow">
+                        A modular bash/python framework that automates the initial reconnaissance phase of a penetration test.
+                    </p>
+                    <ul class="flex flex-wrap gap-3 text-xs font-mono text-brand-primary/80 mt-auto">
+                        <li>Bash</li>
+                        <li>Python</li>
+                    </ul>
+                </div>
+                <!-- Add more projects here as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-brand-dark">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="fade-in-section">
+                <p class="text-brand-primary font-mono mb-2">03. What's Next?</p>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Get In Touch</h2>
+                <p class="text-gray-400 mb-10 max-w-lg mx-auto leading-relaxed">
+                    My inbox is always open. Whether you have a question, a CTF team invite, or just want to say hi, I'll try my best to get back to you!
+                </p>
+            </div>
+
+            <!-- Contact Form -->
+            <form class="max-w-md mx-auto text-left fade-in-section space-y-4 mb-12">
+                <div>
+                    <label for="name" class="block text-sm font-mono text-gray-400 mb-1">Name</label>
+                    <input type="text" id="name" required class="w-full bg-brand-surface border border-gray-700 rounded px-4 py-2 text-white focus:outline-none focus:border-brand-primary transition-colors">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-mono text-gray-400 mb-1">Email</label>
+                    <input type="email" id="email" required class="w-full bg-brand-surface border border-gray-700 rounded px-4 py-2 text-white focus:outline-none focus:border-brand-primary transition-colors">
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-mono text-gray-400 mb-1">Message</label>
+                    <textarea id="message" rows="4" required class="w-full bg-brand-surface border border-gray-700 rounded px-4 py-2 text-white focus:outline-none focus:border-brand-primary transition-colors resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3 bg-transparent border border-brand-primary text-brand-primary font-bold rounded hover:bg-brand-primary/10 transition-colors">
+                    Send Transmission
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-darker py-6 text-center border-t border-brand-surface">
+        <p class="text-gray-500 text-sm font-mono">
+            Built by John Doe <br>
+            <span class="text-xs mt-2 block opacity-50">&copy; 2024 All Rights Reserved.</span>
+        </p>
+    </footer>
+
+    <!-- Linking your separated JS files -->
+    <script src="js/typing.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+

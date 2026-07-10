@@ -1,0 +1,75 @@
+.typing-cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.2em;
+    background-color: #10b981;
+    animation: blink 1s step-end infinite;
+    vertical-align: bottom;
+    margin-left: 4px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, visibility;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+    border-color: #10b981;
+    transform: translateY(-5px);
+}
+
+/* Glitch effect for headers */
+.glitch-wrapper {
+    position: relative;
+}
+
+.glitch-wrapper:hover::before {
+    content: attr(data-text);
+    position: absolute;
+    left: -2px;
+    text-shadow: 2px 0 #ff00c1;
+    top: 0;
+    color: white;
+    background: #020617;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: noise-anim 2s infinite linear alternate-reverse;
+}
+
+@keyframes noise-anim {
+    0% { clip: rect(13px, 9999px, 83px, 0); }
+    5% { clip: rect(42px, 9999px, 14px, 0); }
+    10% { clip: rect(98px, 9999px, 64px, 0); }
+    15% { clip: rect(31px, 9999px, 2px, 0); }
+    20% { clip: rect(76px, 9999px, 51px, 0); }
+    25% { clip: rect(2px, 9999px, 87px, 0); }
+    30% { clip: rect(55px, 9999px, 23px, 0); }
+    35% { clip: rect(91px, 9999px, 45px, 0); }
+    40% { clip: rect(18px, 9999px, 72px, 0); }
+    45% { clip: rect(63px, 9999px, 11px, 0); }
+    50% { clip: rect(84px, 9999px, 99px, 0); }
+    55% { clip: rect(11px, 9999px, 34px, 0); }
+    60% { clip: rect(77px, 9999px, 66px, 0); }
+    65% { clip: rect(39px, 9999px, 81px, 0); }
+    70% { clip: rect(94px, 9999px, 19px, 0); }
+    75% { clip: rect(25px, 9999px, 58px, 0); }
+    80% { clip: rect(59px, 9999px, 92px, 0); }
+    85% { clip: rect(8px, 9999px, 41px, 0); }
+    90% { clip: rect(46px, 9999px, 75px, 0); }
+    95% { clip: rect(97px, 9999px, 28px, 0); }
+    100% { clip: rect(22px, 9999px, 56px, 0); }
+}
+
